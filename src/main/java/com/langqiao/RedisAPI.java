@@ -28,7 +28,7 @@ public class RedisAPI {
 				}
 			}).start();
 		}
-		System.out.println("test_counter的最后的值为："+get("test_counter"));
+		System.out.println("test_counter的最后的值为："+get("test_countervbbbbbbddddddddddddddddd"));
 	}
 	/**
 	 * 构建redis连接池
@@ -146,7 +146,7 @@ public class RedisAPI {
     	Jedis jedis = null;
     	try {
     		//pool = getPool("localhost", 6379);
-    		pool = RedisAPI.getPool("10.200.11.153", 6379,"123456");
+    		pool = RedisAPI.getPool("127.0.0.1", 6379,"123456");
     		jedis = pool.getResource();
     		value = jedis.get(key);
 		} catch (Exception e) {
@@ -167,7 +167,7 @@ public class RedisAPI {
     	Jedis jedis = null;
     	try {
     		//pool = getPool("localhost", 6379);
-    		pool = RedisAPI.getPool("10.200.11.153", 6379,"123456");
+    		pool = RedisAPI.getPool("127.0.0.1", 6379,"123456");
     		jedis = pool.getResource();
     		//long counter = jedis.incr("msg2");
     		System.out.println(jedis.incr("test_countervbbbbbbddddddddddddddddd"));

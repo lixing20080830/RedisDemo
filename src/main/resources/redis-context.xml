@@ -15,21 +15,22 @@
   <!-- scanner redis properties  --> 
   <context:property-placeholder location="classpath:redis.properties" />
   
-  <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">  
+  <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
     <property name="maxIdle" value="${redis.maxIdle}" />  
     <property name="maxTotal" value="${redis.maxTotal}" />  
     <property name="maxWaitMillis" value="${redis.maxWaitMillis}" />  
     <property name="testOnBorrow" value="${redis.testOnBorrow}" />  
   </bean> 
   
-  <bean id="jedisPool" class="redis.clients.jedis.JedisPool" destroy-method="destroy">
-	 <constructor-arg index="0"><bean factory-bean="jedisPoolConfig" factory-method="getConfig"/></constructor-arg>
+  <bean id="jedisPool" class="redis.clients.jedis.JedisPool" scope="singleton">
+      <constructor-arg index="0" ref="jedisPoolConfig">
+      </constructor-arg>
         <constructor-arg index="1" value="${${redis.host}}"/>
         <constructor-arg index="2" value="${${redis.port}}"/>
         <!--timeout-->
         <constructor-arg index="3" value="${redis.timeout}"/>
         <constructor-arg index="4" value="${${redis.password}}"/>
-	</bean> 
+	  </bean>
     
   <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"  
     p:host-name="${redis.host}" 
