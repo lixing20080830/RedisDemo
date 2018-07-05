@@ -100,7 +100,7 @@ public class RedisAPI {
     	JedisPool pool = null;
     	Jedis jedis = null;
     	try {
-    		pool = getPool("localhost", 6379);
+    		pool = getPool("106.12.37.42", 6379);
     		jedis = pool.getResource();
     		result = jedis.set(key, value);
 		} catch (Exception e) {
@@ -123,7 +123,7 @@ public class RedisAPI {
     	JedisPool pool = null;
     	Jedis jedis = null;
     	try {
-    		pool = getPool("localhost", 6379);
+    		pool = getPool("106.12.37.42", 6379);
     		jedis = pool.getResource();
     		result = jedis.setnx(key, value);
 		} catch (Exception e) {
@@ -146,7 +146,7 @@ public class RedisAPI {
     	Jedis jedis = null;
     	try {
     		//pool = getPool("localhost", 6379);
-    		pool = RedisAPI.getPool("127.0.0.1", 6379,"123456");
+    		pool = RedisAPI.getPool("106.12.37.42", 6379,"lixing");
     		jedis = pool.getResource();
     		value = jedis.get(key);
 		} catch (Exception e) {
@@ -167,10 +167,10 @@ public class RedisAPI {
     	Jedis jedis = null;
     	try {
     		//pool = getPool("localhost", 6379);
-    		pool = RedisAPI.getPool("127.0.0.1", 6379,"123456");
+    		pool = RedisAPI.getPool("106.12.37.42", 6379,"lixing");
     		jedis = pool.getResource();
     		//long counter = jedis.incr("msg2");
-    		System.out.println(jedis.incr("test_countervbbbbbbddddddddddddddddd"));
+    		System.out.println(jedis.incr("特朗普，波尔吉尼斯，波多野结衣"));
     		//System.out.println(Thread.currentThread().getName());
 		} catch (Exception e) {
 			pool.returnBrokenResource(jedis);
