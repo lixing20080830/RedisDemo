@@ -26,10 +26,10 @@ public class RedisCacheManager extends AbstractCacheManager{
 		config.setMaxWaitMillis(100*100);
 		config.setTestOnBorrow(false);
 	 	          
-		JedisPool pool = new JedisPool(config,  "10.200.11.153" );
+		JedisPool pool = new JedisPool(config,  "106.12.37.42" );
 		for (Cache cache : caches){
 			Jedis jedis = pool.getResource();
-			//jedis.auth("123456");
+			jedis.auth("lixing");
 			jedis.select(i++);
 			
 			RedisCache rc = (RedisCache)cache;

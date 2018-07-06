@@ -14,6 +14,8 @@
 		<junit.version>4.12</junit.version>
 		<json-lib.version>2.1</json-lib.version>
 		<fastjson-lib.version>1.1.37</fastjson-lib.version>
+
+		<argLine>-Dfile.encoding=UTF-8</argLine>
 	</properties>
 
 	<repositories>
@@ -227,15 +229,26 @@
 
 	<build>
 		<plugins>
+
+			<!--<plugin>-->
+				<!--<groupId>org.apache.maven.plugins</groupId>-->
+				<!--<artifactId>maven-surefire-plugin</artifactId>-->
+				<!--<version>3.0</version>-->
+				<!--<configuration>-->
+					<!--<forkMode>once</forkMode>-->
+					<!--<argLine>-Dfile.encoding=UTF-8</argLine>-->
+				<!--</configuration>-->
+			<!--</plugin>-->
+
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>tomcat-maven-plugin</artifactId>
 				<version>1.1</version>
 				<configuration>
-					<path>/springredis</path>
+					<path>/RedisDemo</path>
 					<port>8080</port>
 					<uriEncoding>UTF-8</uriEncoding>
-					<url>http://localhost:8080/springredis/</url>
+					<url>http://localhost:8080/RedisDemo/</url>
 					<server>tomcat6</server>
 				</configuration>
 			</plugin>
@@ -249,7 +262,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>springredis</finalName>
+		<finalName>RedisDemo</finalName>
 		<resources>
 			<resource>
 				<directory>src/main/java</directory>
@@ -283,5 +296,6 @@
 			</testResource>
 		</testResources>
 	</build>
+
 
 </project>

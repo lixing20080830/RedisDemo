@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="springredis:war exploded">
-    <output-path>$PROJECT_DIR$/target/springredis</output-path>
+    <output-path>$PROJECT_DIR$/target/RedisDemo</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -41,7 +41,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/springredis/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/RedisDemo/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="springredis/web/Web" />
     </root>

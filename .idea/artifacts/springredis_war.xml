@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="springredis:war">
     <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="springredis.war">
+    <root id="archive" name="RedisDemo.war">
       <element id="artifact" artifact-name="springredis:war exploded" />
     </root>
   </artifact>
